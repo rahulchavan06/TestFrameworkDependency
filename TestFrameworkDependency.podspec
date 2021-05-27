@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.summary = 'Bluejay is a simple Swift framework for building reliable Bluetooth apps.'
   spec.homepage = 'https://github.com/rahulchavan06'
   spec.source = { git: 'https://github.com/rahulchavan06/TestFrameworkDependency.git'}
-  spec.source_files = 'TestFrameworkDependency/TestFrameworkDependency/*.{h,swift}'
+  spec.source_files = 'TestFrameworkDependency/*.{h,swift}'
   spec.framework = 'SystemConfiguration'
   spec.platform = :ios, '11.0'
   spec.requires_arc = true
