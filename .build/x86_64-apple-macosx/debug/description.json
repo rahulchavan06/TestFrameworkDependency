@@ -1,0 +1,19 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "\/Users\/proteus\/mytool\/.build\/x86_64-apple-macosx\/debug\/mytoolPackageTests.xctest\/Contents\/MacOS\/mytoolPackageTests",
+      "packageName" : "mytool",
+      "productName" : "mytoolPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "swiftTargetMap" : {
+    "C.mytool-debug.module" : "mytool",
+    "C.mytoolTests-debug.module" : "mytoolTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

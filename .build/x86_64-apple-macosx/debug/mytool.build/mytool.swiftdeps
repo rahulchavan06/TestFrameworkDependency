@@ -1,0 +1,22 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "mytool"
+provides-nominal:
+- "6mytoolAAV"
+provides-member:
+- ["6mytoolAAV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "StringLiteralType"
+- "mytool"
+depends-member:
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["6mytoolAAV", "init"]
+- ["6mytoolAAV", "text"]
+depends-nominal:
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "6mytoolAAV"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/module.modulemap"
+interface-hash: "83dbec676364fd73d714b9e7991994db"

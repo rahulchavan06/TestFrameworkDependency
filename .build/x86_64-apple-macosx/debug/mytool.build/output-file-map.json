@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/master.swiftdeps"
+  },
+  "/Users/proteus/mytool/Sources/mytool/mytool.swift": {
+    "dependencies": "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.d",
+    "object": "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swift.o",
+    "swiftmodule": "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool~partial.swiftmodule",
+    "swift-dependencies": "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swiftdeps"
+  }
+}

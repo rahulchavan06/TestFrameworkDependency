@@ -1,0 +1,4 @@
+/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swift.o : /Users/proteus/mytool/Sources/mytool/mytool.swift /Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/module.modulemap
+/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool~partial.swiftmodule : /Users/proteus/mytool/Sources/mytool/mytool.swift /Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/module.modulemap
+/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool~partial.swiftdoc : /Users/proteus/mytool/Sources/mytool/mytool.swift /Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/module.modulemap
+/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool~partial.swiftsourceinfo : /Users/proteus/mytool/Sources/mytool/mytool.swift /Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/module.modulemap

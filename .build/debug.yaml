@@ -1,0 +1,78 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<mytool-debug.module>"]
+  "mytool-debug.module": ["<mytool-debug.module>"]
+  "mytoolPackageTests-debug.test": ["<mytoolPackageTests-debug.test>"]
+  "mytoolTests-debug.module": ["<mytoolTests-debug.module>"]
+  "test": ["<mytool-debug.module>","<mytoolPackageTests-debug.test>","<mytoolTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/proteus/mytool/Sources/mytool/":
+    is-directory-structure: true
+  "/Users/proteus/mytool/Tests/mytoolTests/":
+    is-directory-structure: true
+commands:
+  "<mytool-debug.module>":
+    tool: phony
+    inputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.swiftmodule"]
+    outputs: ["<mytool-debug.module>"]
+
+  "<mytoolPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolPackageTests.xctest/Contents/MacOS/mytoolPackageTests"]
+    outputs: ["<mytoolPackageTests-debug.test>"]
+
+  "<mytoolTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/XCTestManifests.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/mytoolTests.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.swiftmodule"]
+    outputs: ["<mytoolTests-debug.module>"]
+
+  "C.mytool-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/proteus/mytool/Sources/mytool/mytool.swift"]
+    outputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "mytool"
+    module-output-path: "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.swiftmodule"
+    import-paths: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build"
+    objects: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-emit-objc-header","-emit-objc-header-path","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool-Swift.h","-color-diagnostics"]
+    sources: ["/Users/proteus/mytool/Sources/mytool/mytool.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 4
+
+  "C.mytoolPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/XCTestManifests.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/mytoolTests.swift.o"]
+    outputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolPackageTests.xctest/Contents/MacOS/mytoolPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/mytoolPackageTests.xctest/Contents/MacOS/mytoolPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug","-o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolPackageTests.xctest/Contents/MacOS/mytoolPackageTests","-module-name","mytoolPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.15","-Xlinker","-add_ast_path","-Xlinker","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.swiftmodule","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.mytoolTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/proteus/mytool/Tests/mytoolTests/XCTestManifests.swift","/Users/proteus/mytool/Tests/mytoolTests/mytoolTests.swift","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.swiftmodule"]
+    outputs: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/XCTestManifests.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/mytoolTests.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "mytoolTests"
+    module-output-path: "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.swiftmodule"
+    import-paths: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build"
+    objects: ["/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/XCTestManifests.swift.o","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytoolTests.build/mytoolTests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.15","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-color-diagnostics"]
+    sources: ["/Users/proteus/mytool/Tests/mytoolTests/XCTestManifests.swift","/Users/proteus/mytool/Tests/mytoolTests/mytoolTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 4
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/proteus/mytool/Sources/mytool/","/Users/proteus/mytool/Tests/mytoolTests/","/Users/proteus/mytool/Package.swift","/Users/proteus/mytool/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

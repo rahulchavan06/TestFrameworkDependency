@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+options: "fe21d451e68ad054a7f7495d3142825b"
+build_time: [1622109240, 783955000]
+inputs:
+  "/Users/proteus/mytool/Sources/mytool/mytool.swift": [1622109221, 574484133]

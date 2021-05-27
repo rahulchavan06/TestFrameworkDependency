@@ -1,0 +1,4 @@
+module mytool {
+    header "/Users/proteus/mytool/.build/x86_64-apple-macosx/debug/mytool.build/mytool-Swift.h"
+    requires objc
+}
