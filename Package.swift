@@ -19,7 +19,7 @@ let package = Package(
     targets: [
         .target(
             name: "mytool",
-            dependencies: [],
+            dependencies: ["realm-cocoa"],
             path: "Sources"
 	),
         .testTarget(
